@@ -8,7 +8,7 @@ fi
 
 cd $target
 
-# How to find normal subdomains from findomain
+# How to find normal subdomains from sublist3r
 python3 /home/offensivehunter/Sublist3r/sublist3r.py -d $target > subdomains.txt
 
 # Now find another subdomains from assetfinder 
