@@ -1,4 +1,4 @@
-#!/home/offensivehunter
+#!/bin/bash
 
 
 target=$1
