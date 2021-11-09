@@ -9,7 +9,7 @@ fi
 cd $target
 
 # How to find normal subdomains from findomain
-./findomain-linux -t $target --quiet | tee -a subdomains.txt 
+python3 /home/offensivehunter/Sublist3r/sublist3r.py -d $target > subdomains.txt
 
 # Now find another subdomains from assetfinder 
 assetfinder -subs-only $target >> subdomains.txt
@@ -24,7 +24,7 @@ cat subdomains1.txt | httprobe > alive.txt
 cat alive.txt | subjs > jsfiles.txt
 
 # Now we have to exoloitation it helps to subdomain takeover 
-subjack -w subdomains1.txt -c /usr/share/subjack/fingerprints.json it 25 -ssl -o takeovers.txt
+subjack -w subdomains1.txt -c /usr/local/go/bin/subjack/fingerprints.json it 25 -ssl -o takeovers.txt
 
 # This is the last thing to do directory busting 
 while read -r line
