@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 target=$1
 if [ ! -d $target ]
 then
