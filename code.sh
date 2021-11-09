@@ -23,11 +23,11 @@ cat subdomains1.txt | httprobe > alive.txt
 # Now we have to find Javascript files to scroll 
 cat alive.txt | subjs > jsfiles.txt
 
-# Now we have to exoloitation it helps to subdomain takeover 
-subjack -w subdomains1.txt -c /usr/local/go/bin/subjack/fingerprints.json it 25 -ssl -o takeovers.txt
+# Now we have to exploitation it helps to Directory fuzzing 
+python3 /home/offensivehunter/dirsearch/dirsearch.py -u alive.txt -w /home/offensivehunter/dirsearch/db/dicc.txt -o directory_fuzz.txt
 
-# This is the last thing to do directory busting 
+# This is the last thing to do subdomain takeover
 while read -r line
 do
-    python3 /home/offensivehunter/dirsearch/dirsearch.py -u alive.txt -w /home/offensivehunter/dirsearch/db/dicc.txt -o directory_fuzz.txt 
+    subzy --targets subs.txt --concurrency 20 --verify_ssl
 done
