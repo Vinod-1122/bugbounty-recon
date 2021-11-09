@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/home/offensivehunter
+
 
 target=$1
 if [ ! -d $target ]
