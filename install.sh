@@ -1,11 +1,11 @@
 git clone https://github.com/Vinod-1122/bugbounty-recon.git
 
-chmod u+x code.sh     
+chmod +x subenum.sh     
 
-./code.sh -d ( enter your target here ) 
+./subenum.sh ( enter your target here ) 
 
 like this 
 
-./code.sh -d google.com 
+./subenum.sh google.com 
 
 The process will automatically works 
